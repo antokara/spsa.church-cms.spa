@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "target": "es2015",
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "assets/*": ["assets/*"],
+      "redux-logger": ["src/helpers/nop/createLogger"],
+      "redux-devtools-extension": ["src/helpers/nop/composeWithDevTools"],
+      "ReactHotLoader": ["src/helpers/nop/hot"],
+      "htmlparser2": ["types/htmlparser2/index.d.ts"],
+      "domutils": ["types/domutils/index.d.ts"]
+    },
+    "typeRoots": ["types", "node_modules/@types"],
+    "types": [
+      "react",
+      "react-dom",
+      "node",
+      "gql",
+      "jest",
+      "svg",
+      "html-to-react",
+      "other",
+      "htmlparser2",
+      "domutils"
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.test/*"
+  ]
+}

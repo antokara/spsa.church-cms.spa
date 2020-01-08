@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "target": "es2015",
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "assets/*": ["assets/*"],
+      "redux-logger": ["node_modules/redux-logger"],
+      "redux-devtools-extension": ["node_modules/redux-devtools-extension"],
+      "ReactHotLoader": ["node_modules/react-hot-loader"],
+      "htmlparser2": ["types/htmlparser2/index.d.ts"],
+      "domutils": ["types/domutils/index.d.ts"]
+    },
+    "typeRoots": ["types", "node_modules/@types"],
+    "types": [
+      "react",
+      "react-dom",
+      "node",
+      "gql",
+      "jest",
+      "svg",
+      "html-to-react",
+      "other",
+      "htmlparser2",
+      "domutils"
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "files": ["jest.setup.afterEnv.ts"]
+}
