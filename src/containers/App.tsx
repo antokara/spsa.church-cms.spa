@@ -18,6 +18,7 @@ import { Layout1 } from 'src/components/layouts/Layout1';
 import { PageError } from 'src/components/shared/pageError/PageError';
 import { PageLoading } from 'src/components/shared/pageLoading/PageLoading';
 import { theme } from 'src/constants/theme';
+import { AwsCognito } from 'src/containers/AwsCognito';
 import {
   ApolloClientCreator,
   TApolloClient
@@ -71,6 +72,7 @@ const App: React.FunctionComponent | null = (): React.ReactElement<
   if (apolloClient) {
     children = (
       <ApolloProvider client={apolloClient}>
+        <AwsCognito />
         <Layout1 />
         <GATrackPageView />
       </ApolloProvider>

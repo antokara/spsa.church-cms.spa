@@ -3,6 +3,7 @@ import { setAutoFreeze } from 'immer';
 import { combineReducers, Reducer } from 'redux';
 import { history } from 'src/helpers/history';
 import { layout } from 'src/reducers/layout/layout';
+import { user } from 'src/reducers/user/user';
 
 /**
  * even though it is supposed to automatically turn on-off on dev/prod,
@@ -14,7 +15,8 @@ setAutoFreeze(process.env.NODE_ENV !== 'production');
 
 const index: Reducer = combineReducers({
   router: connectRouter(history),
-  layout
+  layout,
+  user
 });
 
 export { index };

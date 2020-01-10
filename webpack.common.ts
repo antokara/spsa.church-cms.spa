@@ -32,7 +32,10 @@ const common: (env: NodeJS.ProcessEnv) => Configuration = (
   return {
     entry: [path.resolve(__dirname, 'src/index.tsx')],
     resolve: {
-      extensions: ['.js', '.ts', '.tsx'],
+      // Note: .mjs is required when using aws-amplify-js because:
+      // @see https://github.com/aws-amplify/amplify-js/issues/4299
+      // @see https://github.com/graphql/graphql-js/issues/1272
+      extensions: ['.mjs', '.js', '.ts', '.tsx'],
       alias: {
         src: path.resolve(__dirname, 'src'),
         assets: path.resolve(__dirname, 'assets')

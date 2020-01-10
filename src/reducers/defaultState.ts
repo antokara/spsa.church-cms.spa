@@ -4,6 +4,10 @@ import {
   defaultState as layoutDefaultState,
   TState as TLayoutState
 } from 'src/reducers/layout/defaultState';
+import {
+  defaultState as userDefaultState,
+  TState as TUserState
+} from 'src/reducers/user/defaultState';
 
 // TODO remove when bug is fixed and use the RouterState type commented out above
 // @see https://github.com/supasate/connected-react-router/issues/381
@@ -19,6 +23,7 @@ interface IRouterState<T = LocationState> {
 type TState = {
   router: IRouterState;
   layout: TLayoutState;
+  user: TUserState;
 };
 
 const routerDefaultState: IRouterState = {
@@ -34,7 +39,8 @@ const routerDefaultState: IRouterState = {
 
 const defaultState: TState = {
   router: routerDefaultState,
-  layout: layoutDefaultState
+  layout: layoutDefaultState,
+  user: userDefaultState
 };
 
 export { defaultState, TState };
