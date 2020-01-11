@@ -3,11 +3,11 @@ type TState = {
   email?: string;
   name?: string;
   groups?: string[];
-  loggedIn: boolean;
+  loggedIn?: boolean;
 };
 
 const defaultState: TState = {
-  loggedIn: false
+  loggedIn: undefined // start with undefined, meaning unknown/loading state
 };
 
 export { defaultState, TState };

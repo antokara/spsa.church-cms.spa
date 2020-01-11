@@ -17,11 +17,14 @@ const Layout1: () => JSX.Element = (): JSX.Element => {
     dispatch(logout());
   };
 
-  const LoginOut: React.ReactNode = user.loggedIn ? (
-    <button onClick={logoutClickHandler}>Logout {user.name}</button>
-  ) : (
-    <button onClick={loginClickHandler}>Login</button>
-  );
+  let LoginOut: React.ReactNode;
+  if (user.loggedIn === undefined) {
+    LoginOut = 'Loading...';
+  } else if (user.loggedIn) {
+    LoginOut = <button onClick={logoutClickHandler}>Logout {user.name}</button>;
+  } else {
+    LoginOut = <button onClick={loginClickHandler}>Login</button>;
+  }
 
   return <>cms{LoginOut}</>;
 };
